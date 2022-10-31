@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82412332361",
+    "project_id": "credigo-mobile",
+    "storage_bucket": "credigo-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82412332361:android:580bcf16c1df0e1334a698",
+        "android_client_info": {
+          "package_name": "com.example.credigo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82412332361-bktvtdhbd5rj173mv26s7tk1psqns3nk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYRaWQEbi7sQfLbdqvQdGxM2Hvoau5exo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82412332361-bktvtdhbd5rj173mv26s7tk1psqns3nk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
