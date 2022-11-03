@@ -1,10 +1,12 @@
 import 'package:credigo/constants/constants.dart';
 import 'package:credigo/views/auh/send_otp/verify_otp.dart';
+import 'package:credigo/views/homescreen/homescreen.dart';
+import 'package:credigo/views/mainscreen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SendOTP extends StatelessWidget {
-  const SendOTP({super.key});
+class EnterNameScreen extends StatelessWidget {
+  const EnterNameScreen({super.key});
 
   List<Widget> _buildPageIndicator(int activeIndicator) {
     List<Widget> list = [];
@@ -50,7 +52,7 @@ class SendOTP extends StatelessWidget {
                   ),
                 ),
                 Row(
-                  children: _buildPageIndicator(0),
+                  children: _buildPageIndicator(2),
                 )
               ],
             ),
@@ -58,7 +60,7 @@ class SendOTP extends StatelessWidget {
               height: 27,
             ),
             const Text(
-              "Enter your Phone Number",
+              "What’s your name?",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
@@ -73,62 +75,27 @@ class SendOTP extends StatelessWidget {
               decoration: textInputDecoration.copyWith(
                 // prefix: Text("+233 - "),
                 isDense: true,
-                hintText: "0541234567",
+                hintText: "Legal first name",
                 hintStyle: const TextStyle(
                   fontSize: 16,
                 ),
               ),
             ),
             const SizedBox(
-              height: 370,
+              height: 20,
             ),
-            Container(
-              height: 90,
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  color: blueColor.withOpacity(
-                    0.2,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: Row(
-                children: [
-                  Checkbox(
-                    value: true,
-                    onChanged: (bool? value) {},
-                    activeColor: whiteColor,
-                    checkColor: whiteColor,
-                    side: BorderSide.none,
-                    hoverColor: whiteColor,
-                  ),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Expanded(
-                          child: Text(
-                            "By submitting my information, I agree to ",
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                        Expanded(
-                          child: Text(
-                            "all CrediGo’s Terms & Conditions ",
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                        Expanded(
-                          child: Text(
-                            "and Privacy Policy",
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+            TextField(
+              cursorHeight: 30,
+              cursorColor: blueColor,
+              decoration: textInputDecoration.copyWith(
+                // prefix: Text("+233 - "),
+                isDense: true,
+                hintText: "Legal last name",
+                hintStyle: const TextStyle(
+                  fontSize: 16,
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -141,7 +108,7 @@ class SendOTP extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             Get.to(
-              () => const VerifyOTP(),
+              () => MainScreen(),
             );
           },
           style: ElevatedButton.styleFrom(
@@ -157,7 +124,7 @@ class SendOTP extends StatelessWidget {
             ),
           ),
           child: const Text(
-            'Next',
+            "Let's get started",
             style: TextStyle(
               color: whiteColor,
               fontSize: 16,

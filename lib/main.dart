@@ -11,7 +11,6 @@ import 'package:path_provider/path_provider.dart';
 
 import 'firebase_options.dart';
 import 'views/auh/send_otp/send_otp.dart';
-import 'views/no_internet/no_internet.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,7 +58,7 @@ class _MyAppState extends State<MyApp> {
 
     bool seen = settings.get("seen") ?? false;
 
-    if (!seen) {
+    if (seen) {
       setState(() {
         pageToRender = const SendOTP();
       });
@@ -113,9 +112,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Cause App',
+      title: 'Credigo',
       theme: ThemeData(
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamily: GoogleFonts.montserrat().fontFamily,
         primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

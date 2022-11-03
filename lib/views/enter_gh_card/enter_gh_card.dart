@@ -1,31 +1,10 @@
 import 'package:credigo/constants/constants.dart';
-import 'package:credigo/views/auh/send_otp/verify_otp.dart';
+import 'package:credigo/views/homescreen/homescreen_with_score.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
-class SendOTP extends StatelessWidget {
-  const SendOTP({super.key});
-
-  List<Widget> _buildPageIndicator(int activeIndicator) {
-    List<Widget> list = [];
-    for (int i = 0; i < 3; i++) {
-      list.add(i == activeIndicator ? _indicator(true) : _indicator(false));
-    }
-    return list;
-  }
-
-  Widget _indicator(bool isActive) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 150),
-      margin: const EdgeInsets.symmetric(horizontal: 2.0),
-      width: isActive ? 30.0 : 7.0,
-      height: 6,
-      decoration: BoxDecoration(
-        color: isActive ? blueColor : const Color(0xFFCBCBCB),
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
-      ),
-    );
-  }
+class GhCardDetailsScreen extends StatelessWidget {
+  const GhCardDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,27 +17,11 @@ class SendOTP extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "CrediGo",
-                  style: TextStyle(
-                    fontSize: 31,
-                    fontWeight: FontWeight.bold,
-                    color: blueColor,
-                  ),
-                ),
-                Row(
-                  children: _buildPageIndicator(0),
-                )
-              ],
-            ),
             const SizedBox(
               height: 27,
             ),
             const Text(
-              "Enter your Phone Number",
+              "Enter your Ghana card Number",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
@@ -73,7 +36,7 @@ class SendOTP extends StatelessWidget {
               decoration: textInputDecoration.copyWith(
                 // prefix: Text("+233 - "),
                 isDense: true,
-                hintText: "0541234567",
+                hintText: "GHA - 726772232 - 9",
                 hintStyle: const TextStyle(
                   fontSize: 16,
                 ),
@@ -107,19 +70,7 @@ class SendOTP extends StatelessWidget {
                       children: const [
                         Expanded(
                           child: Text(
-                            "By submitting my information, I agree to ",
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                        Expanded(
-                          child: Text(
-                            "all CrediGo’s Terms & Conditions ",
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                        Expanded(
-                          child: Text(
-                            "and Privacy Policy",
+                            "I hereby authorise CrediGo to receive my credit information  from the credit bureau.",
                             textAlign: TextAlign.justify,
                           ),
                         ),
@@ -140,8 +91,10 @@ class SendOTP extends StatelessWidget {
         decoration: const BoxDecoration(),
         child: ElevatedButton(
           onPressed: () {
-            Get.to(
-              () => const VerifyOTP(),
+            pushNewScreen(
+              context,
+              screen: HomeScreenWithScore(),
+              withNavBar: true,
             );
           },
           style: ElevatedButton.styleFrom(
@@ -157,7 +110,7 @@ class SendOTP extends StatelessWidget {
             ),
           ),
           child: const Text(
-            'Next',
+            'Continue',
             style: TextStyle(
               color: whiteColor,
               fontSize: 16,

@@ -284,9 +284,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      
                       _pageController.animateToPage(
-                        _numPages - 1,
+                        _currentPage + 1,
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                       );
