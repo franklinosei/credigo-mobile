@@ -31,7 +31,7 @@ class AdvisorScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text("Let Robo advisor guide you!"),
+            const Text("Let Robo Advisor guide you!"),
             const SizedBox(
               height: 30,
             ),
